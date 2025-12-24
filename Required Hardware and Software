@@ -1,0 +1,13 @@
+Hardware:
+Arduino Uno Microcontroller
+HC-SR04 Ultrasonic Sensor
+Active Buzzer
+LED
+
+Software:
+Arduino IDE
+
+Notes:
+The device can be powered using a 5 volt battery
+A cable is needed to connect the Arduino Uno to a laptop with the Arduino IDE installed
+
