@@ -1,8 +1,10 @@
+// Define Components and Connections
 #define trigPin 7
 #define echoPin 4
 #define buzzer 10
 #define LED 13
 
+// Define Inputs and Outputs
 void setup() {
   Serial.begin (9600);
   pinMode(trigPin, OUTPUT);
@@ -23,10 +25,12 @@ void loop() {
   Serial.print(distance);
   Serial.println(" cm");
 
+// If detected object is far away -> turn on LED
   if (distance > 200 and distance < 350) {
     tone(LED, 100, 500); 
   }
 
+// If detected object is close by -> turn on buzzer
   if (distance > 15 and distance < 125) {
     tone(buzzer, 100, 100); 
   }
