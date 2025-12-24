@@ -1,0 +1,36 @@
+#define trigPin 7
+#define echoPin 4
+#define buzzer 10
+#define LED 13
+
+void setup() {
+  Serial.begin (9600);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(buzzer, OUTPUT);
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+  long duration, distance;
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance = (duration / 2) / 15;
+  Serial.print(distance);
+  Serial.println(" cm");
+
+  if (distance > 200 and distance < 350) {
+    tone(LED, 100, 500); 
+  }
+
+  if (distance > 15 and distance < 125) {
+    tone(buzzer, 100, 100); 
+  }
+  else {
+    delay (200);
+  }
+}
